@@ -1,0 +1,25 @@
+# Wikipedia current events + recent changes
+# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
+sources:
+- name: Current events portal (en)
+  url: https://en.wikipedia.org/w/api.php?action=parse&page=Portal:Current_events&prop=text&format=json&formatversion=2
+  verified: '2026-10-15'
+- name: Recent changes API (en)
+  url: https://en.wikipedia.org/w/api.php?action=query&list=recentchanges&rcprop=title|timestamp|sizes&rclimit=50&format=json
+  verified: '2026-10-15'
+- name: Pageviews top (en, yesterday)
+  url: https://wikimedia.org/api/rest_v1/metrics/pageviews/top/en.wikipedia/all-access/2026/10/14
+  verified: '2026-10-15'
+- name: Recent changes API (ru)
+  url: https://ru.wikipedia.org/w/api.php?action=query&list=recentchanges&rclimit=50&format=json
+  verified: '2026-10-15'
+- name: Recent changes API (zh)
+  url: https://zh.wikipedia.org/w/api.php?action=query&list=recentchanges&rclimit=50&format=json
+  verified: '2026-10-15'
+- name: Recent changes API (ja)
+  url: https://ja.wikipedia.org/w/api.php?action=query&list=recentchanges&rclimit=50&format=json
+  verified: '2026-10-15'
+- name: EventStreams recentchange (SSE)
+  url: https://stream.wikimedia.org/v2/stream/recentchange
+  verified: '2026-10-15'
+notes: EventStreams is SSE (server-sent events); filter recentchange to namespace 0 and pages linked from Portal:Current_events

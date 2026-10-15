@@ -1,0 +1,12 @@
+# Internet Archive Wayback for edit tracking
+# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
+sources:
+- name: Wayback availability
+  url: https://archive.org/wayback/available?url=reuters.com/world/
+  verified: '2026-10-15'
+- name: Save Page Now
+  url: https://web.archive.org/save/{url}
+  verified: null
+  notes: write action (POST); needs archive.org S3 keys; not tested
+usage: 'For each item with label verified reporting/official statement: query availability on fetch, re-fetch article at +6h/+24h/+72h, diff body/title; on change store diff + snapshot URL (edit/correction
+  tracking).'

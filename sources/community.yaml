@@ -1,0 +1,25 @@
+# Hacker News (Algolia) + Lemmy
+# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
+label: community report
+sources:
+- name: Hacker News Algolia front page
+  url: https://hn.algolia.com/api/v1/search?tags=front_page
+  verified: '2026-10-15'
+- name: Hacker News Algolia search (recent)
+  url: https://hn.algolia.com/api/v1/search_by_date?tags=story&query=election
+  verified: '2026-10-15'
+- name: HN official RSS (hnrss)
+  url: https://hnrss.org/frontpage
+  verified: '2026-10-15'
+- name: Lemmy.world worldnews
+  url: https://lemmy.world/api/v3/post/list?community_name=worldnews@lemmy.world&sort=New&limit=20
+  verified: '2026-10-15'
+- name: Lemmy.world news
+  url: https://lemmy.world/api/v3/post/list?community_name=news@lemmy.world&sort=New&limit=20
+  verified: '2026-10-15'
+- name: Lemmy.ml worldnews
+  url: https://lemmy.ml/api/v3/post/list?community_name=worldnews@lemmy.ml&sort=New&limit=20
+  verified: '2026-10-15'
+- name: Lemmy.world RSS worldnews
+  url: https://lemmy.world/feeds/c/worldnews.xml?sort=New
+  verified: '2026-10-15'
