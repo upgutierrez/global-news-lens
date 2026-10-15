@@ -1,0 +1,68 @@
+# Bluesky public AppView (no auth)
+# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
+appview: https://public.api.bsky.app
+endpoints:
+  author_feed: /xrpc/app.bsky.feed.getAuthorFeed?actor={handle}&limit=50
+  search_posts: /xrpc/app.bsky.feed.searchPosts?q={query}&lang={lang} (may require auth; not verified)
+label: social-media claim
+accounts:
+- handle: reuters.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=reuters.com&limit=5
+  verified: '2026-10-15'
+- handle: apnews.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=apnews.com&limit=5
+  verified: '2026-10-15'
+- handle: nytimes.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=nytimes.com&limit=5
+  verified: '2026-10-15'
+- handle: washingtonpost.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=washingtonpost.com&limit=5
+  verified: '2026-10-15'
+- handle: theguardian.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=theguardian.com&limit=5
+  verified: '2026-10-15'
+- handle: npr.org
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=npr.org&limit=5
+  verified: '2026-10-15'
+- handle: aljazeera.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=aljazeera.com&limit=5
+  verified: '2026-10-15'
+- handle: kyivindependent.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=kyivindependent.com&limit=5
+  verified: '2026-10-15'
+- handle: meduza.io
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=meduza.io&limit=5
+  verified: '2026-10-15'
+- handle: propublica.org
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=propublica.org&limit=5
+  verified: '2026-10-15'
+- handle: bellingcat.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=bellingcat.com&limit=5
+  verified: '2026-10-15'
+- handle: afp.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=afp.com&limit=5
+  verified: '2026-10-15'
+- handle: cnn.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=cnn.com&limit=5
+  verified: '2026-10-15'
+- handle: wsj.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=wsj.com&limit=5
+  verified: '2026-10-15'
+- handle: economist.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=economist.com&limit=5
+  verified: '2026-10-15'
+- handle: scmp.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=scmp.com&limit=5
+  verified: '2026-10-15'
+- handle: japantimes.co.jp
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=japantimes.co.jp&limit=5
+  verified: '2026-10-15'
+- handle: france24.com
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=france24.com&limit=5
+  verified: '2026-10-15'
+- handle: maxseddon.bsky.social
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=maxseddon.bsky.social&limit=5
+  verified: '2026-10-15'
+- handle: shashj.bsky.social
+  feed: https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=shashj.bsky.social&limit=5
+  verified: '2026-10-15'

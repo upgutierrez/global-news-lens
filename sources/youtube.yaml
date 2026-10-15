@@ -1,0 +1,74 @@
+# YouTube news channel RSS feeds
+# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
+template: https://www.youtube.com/feeds/videos.xml?channel_id={channel_id}
+channels:
+- name: Al Jazeera English
+  channel_id: UCNye-wNBqNL5ZzHSJj3l8Bg
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UCNye-wNBqNL5ZzHSJj3l8Bg
+  verified: '2026-10-15'
+  affiliation: state-affiliated
+- name: BBC News
+  channel_id: UC16niRr50-MSBwiO3YDb3RA
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UC16niRr50-MSBwiO3YDb3RA
+  verified: '2026-10-15'
+  affiliation: public-broadcaster
+- name: DW News
+  channel_id: UCknLrEdhRCp1aegoMqRaCZg
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UCknLrEdhRCp1aegoMqRaCZg
+  verified: '2026-10-15'
+  affiliation: public-broadcaster
+- name: France 24 English
+  channel_id: UCQfwfsi5VrQ8yKZ-UWmAEFg
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UCQfwfsi5VrQ8yKZ-UWmAEFg
+  verified: '2026-10-15'
+  affiliation: public-broadcaster
+- name: CGTN
+  channel_id: UCgrNz-aDmcr2uuto8_DL2jg
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UCgrNz-aDmcr2uuto8_DL2jg
+  verified: '2026-10-15'
+  affiliation: state-affiliated
+- name: NHK WORLD-JAPAN
+  channel_id: UCSPEjw8F2nQDtmUKPFNF7_A
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UCSPEjw8F2nQDtmUKPFNF7_A
+  verified: '2026-10-15'
+  affiliation: public-broadcaster
+- name: WION
+  channel_id: UC_gUM8rL-Lrg6O3adPW9K1g
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UC_gUM8rL-Lrg6O3adPW9K1g
+  verified: '2026-10-15'
+  affiliation: independent
+- name: Sky News
+  channel_id: UCoMdktPbSTixAyNGwb-UYkQ
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UCoMdktPbSTixAyNGwb-UYkQ
+  verified: '2026-10-15'
+  affiliation: independent
+- name: PBS NewsHour
+  channel_id: UC6ZFN9Tx6xh-skXCuRHCDpQ
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UC6ZFN9Tx6xh-skXCuRHCDpQ
+  verified: '2026-10-15'
+  affiliation: public-broadcaster
+- name: ABC News (AU)
+  channel_id: UCVgO39Bk5sMo66-6o6Spn6Q
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UCVgO39Bk5sMo66-6o6Spn6Q
+  verified: '2026-10-15'
+  affiliation: public-broadcaster
+- name: TRT World
+  channel_id: UC7fWeaHhqgM4Ry-RMpM2YYw
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UC7fWeaHhqgM4Ry-RMpM2YYw
+  verified: '2026-10-15'
+  affiliation: state-affiliated
+- name: Times Now
+  channel_id: UC6RJ7-PaXg6TIH2BzZfTV7w
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UC6RJ7-PaXg6TIH2BzZfTV7w
+  verified: '2026-10-15'
+  affiliation: independent
+- name: TV Rain (Dozhd)
+  channel_id: UCdubelOloxR3wzwJG9x8YqQ
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UCdubelOloxR3wzwJG9x8YqQ
+  verified: '2026-10-15'
+  affiliation: independent
+- name: CNA
+  channel_id: UC83jt4dlz1Gjl58fzQrrKZg
+  rss: https://www.youtube.com/feeds/videos.xml?channel_id=UC83jt4dlz1Gjl58fzQrrKZg
+  verified: '2026-10-15'
+  affiliation: state-affiliated

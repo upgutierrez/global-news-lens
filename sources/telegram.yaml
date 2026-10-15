@@ -1,0 +1,78 @@
+# Telegram public channels
+# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
+notes: 'Public RSSHub (rsshub.app) returned 403 on every route at check time; self-host RSSHub (docker run -p 1200:1200 diygod/rsshub) and use http://localhost:1200/telegram/channel/{name}. Verified fallback:
+  t.me/s/{name} public preview HTML (parse .tgme_widget_message).'
+rsshub_self_hosted: http://localhost:1200/telegram/channel/{name}
+label: social-media claim
+channels:
+- name: rian_ru
+  verified_urls:
+  - https://rsshub.rssforever.com/telegram/channel/rian_ru
+  - https://t.me/s/rian_ru
+  verified: '2026-10-15'
+  affiliation: state-affiliated
+- name: tass_agency
+  verified_urls:
+  - https://t.me/s/tass_agency
+  verified: '2026-10-15'
+  affiliation: state-affiliated
+- name: rt_russian
+  verified_urls:
+  - https://t.me/s/rt_russian
+  verified: '2026-10-15'
+  affiliation: state-affiliated
+- name: meduzalive
+  verified_urls:
+  - https://t.me/s/meduzalive
+  verified: '2026-10-15'
+  affiliation: unknown
+- name: bbcrussian
+  verified_urls:
+  - https://t.me/s/bbcrussian
+  verified: '2026-10-15'
+  affiliation: unknown
+- name: nexta_live
+  verified_urls:
+  - https://t.me/s/nexta_live
+  verified: '2026-10-15'
+  affiliation: unknown
+- name: rybar
+  verified_urls:
+  - https://t.me/s/rybar
+  verified: '2026-10-15'
+  affiliation: unknown
+- name: readovkanews
+  verified_urls:
+  - https://t.me/s/readovkanews
+  verified: '2026-10-15'
+  affiliation: unknown
+- name: kyivindependent_official
+  verified_urls:
+  - https://t.me/s/kyivindependent_official
+  verified: '2026-10-15'
+  affiliation: unknown
+- name: insiderUA
+  verified_urls:
+  - https://t.me/s/insiderUA
+  verified: '2026-10-15'
+  affiliation: unknown
+- name: Ateobreaking
+  verified_urls:
+  - https://t.me/s/Ateobreaking
+  verified: '2026-10-15'
+  affiliation: unknown
+- name: disclosetv
+  verified_urls:
+  - https://t.me/s/disclosetv
+  verified: '2026-10-15'
+  affiliation: unknown
+- name: CGTNOfficial
+  verified_urls:
+  - https://t.me/s/CGTNOfficial
+  verified: '2026-10-15'
+  affiliation: state-affiliated
+- name: PDChina
+  verified_urls:
+  - https://t.me/s/PDChina
+  verified: '2026-10-15'
+  affiliation: state-affiliated
