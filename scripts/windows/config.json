@@ -1,0 +1,19 @@
+{
+  "repo": "D:\\global-news-lens",
+  "python": "C:\\Users\\derek\\AppData\\Local\\Programs\\Python\\Python313\\python.exe",
+  "log_dir": "D:\\global-news-lens\\logs",
+  "log_max_mb": 5,
+  "log_keep": 5,
+  "pause_flag": "D:\\global-news-lens\\PAUSE",
+  "llm_pause_flag": "D:\\global-news-lens\\PAUSE_LLM",
+  "state_file": "D:\\global-news-lens\\logs\\gpu_guard_state.json",
+  "ollama_url": "http://127.0.0.1:11434",
+  "other_gpu_util_percent": 10,
+  "other_gpu_vram_mb": 1500,
+  "resume_after_free_seconds": 150,
+  "busy_poll_seconds": 30,
+  "loop_sleep_seconds": 60,
+  "ignore_processes": ["ollama", "ollama app", "llama-server", "ollama_llama_server", "dwm", "System", "Idle", "csrss", "explorer", "ShellExperienceHost", "SearchHost", "StartMenuExperienceHost", "TextInputHost", "LockApp", "nvcontainer", "NVIDIA Overlay", "NVIDIA Share", "Docker Desktop", "vmmem", "vmmemWSL"],
+  "always_busy_processes": ["VALORANT-Win64-Shipping", "League of Legends", "cs2", "FortniteClient-Win64-Shipping", "r5apex", "RocketLeague", "Overwatch", "Diablo IV", "GTA5", "eldenring", "Cyberpunk2077", "obs64", "Resolve", "Adobe Premiere Pro", "blender"],
+  "collectors": [["-m", "collectors.rss"], ["-m", "collectors.rss", "--official"], ["-m", "collectors.gdelt"]]
+}
