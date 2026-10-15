@@ -1,0 +1,13 @@
+# Local use only: SearXNG settings (no secrets committed; SEARXNG_SECRET comes from .env)
+use_default_settings: true
+general:
+  instance_name: "global-news-lens"
+server:
+  limiter: false
+  image_proxy: false
+  public_instance: false
+search:
+  safe_search: 0
+  formats:
+    - html
+    - json

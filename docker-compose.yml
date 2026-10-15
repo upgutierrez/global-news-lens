@@ -1,0 +1,25 @@
+# Bind to localhost + Tailscale IP only (never 0.0.0.0). Set TS_IP in .env.
+services:
+  searxng:
+    image: searxng/searxng:latest
+    container_name: gnl-searxng
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8888:8080"
+      - "${TS_IP}:8888:8080"
+    environment:
+      - SEARXNG_BASE_URL=http://localhost:8888/
+      - SEARXNG_SECRET=${SEARXNG_SECRET}
+    volumes:
+      - ./searxng/settings.yml:/etc/searxng/settings.yml:ro
+  rsshub:
+    image: diygod/rsshub:latest
+    container_name: gnl-rsshub
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:1200:1200"
+      - "${TS_IP}:1200:1200"
+    environment:
+      - NODE_ENV=production
+      - CACHE_TYPE=memory
+      - CACHE_EXPIRE=600

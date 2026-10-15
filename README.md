@@ -19,7 +19,7 @@ A personal, non-commercial tool that compares how news outlets and online commun
 
 ## Status
 
-Early development. Source lists verified 2026-10-15 (see `docs/source-verification.md`). RSS collector works; GDELT collector written but GDELT was rate-limiting (HTTP 429) during testing. Reddit collector pending API approval.
+Early development. Source lists verified 2026-10-15 (see `docs/source-verification.md`). RSS collector works; SearXNG and RSSHub run via docker-compose; GDELT collector written but GDELT was rate-limiting (HTTP 429) during testing. Reddit collector pending API approval.
 
 ## Repository structure
 
@@ -43,6 +43,23 @@ docs/
   source-verification.md # what was verified/dropped and why
 requirements.txt
 ```
+
+## Setup on Derek's PC (Windows 11, Docker Desktop + WSL2)
+
+```powershell
+git clone https://github.com/upgutierrez/global-news-lens D:\global-news-lens
+cd D:\global-news-lens
+copy .env.example .env      # set TS_IP to the PC's Tailscale IPv4 (tailscale ip -4) and a random SEARXNG_SECRET
+docker compose up -d        # SearXNG + RSSHub, restart: unless-stopped
+```
+
+| Service | Local | Tailscale | Notes |
+|---|---|---|---|
+| SearXNG | http://127.0.0.1:8888 | http://100.100.43.107:8888 | JSON at `/search?q=...&format=json&language=ja`; limiter off (local use only) |
+| RSSHub | http://127.0.0.1:1200 | http://100.100.43.107:1200 | e.g. `/telegram/channel/meduzalive` |
+| Ollama | http://127.0.0.1:11434 | port 11434 via `tailscale serve` (tailnet only) | models in `D:\ollama\models` |
+
+Ports are bound to 127.0.0.1 and the Tailscale IP only, never 0.0.0.0. If the Tailscale IP changes, update `.env` and run `docker compose up -d` again.
 
 ## Quick start
 

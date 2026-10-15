@@ -1,78 +1,89 @@
-# Telegram public channels
-# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
-notes: 'Public RSSHub (rsshub.app) returned 403 on every route at check time; self-host RSSHub (docker run -p 1200:1200 diygod/rsshub) and use http://localhost:1200/telegram/channel/{name}. Verified fallback:
-  t.me/s/{name} public preview HTML (parse .tgme_widget_message).'
+# Telegram public channels via self-hosted RSSHub. Checked from Derek's PC on 2026-10-15.
+notes: 'Primary: self-hosted RSSHub from docker-compose.yml (Derek''s PC). URLs: http://127.0.0.1:1200 locally, http://100.100.43.107:1200 over Tailscale. Public rsshub.app returned 403 on 2026-10-15, so
+  it is not used. Fallback: t.me/s/{name} public preview HTML.'
 rsshub_self_hosted: http://localhost:1200/telegram/channel/{name}
 label: social-media claim
 channels:
 - name: rian_ru
-  verified_urls:
-  - https://rsshub.rssforever.com/telegram/channel/rian_ru
-  - https://t.me/s/rian_ru
   verified: '2026-10-15'
   affiliation: state-affiliated
+  url: http://127.0.0.1:1200/telegram/channel/rian_ru
+  items_at_check: 19
+  status: ok
 - name: tass_agency
-  verified_urls:
-  - https://t.me/s/tass_agency
   verified: '2026-10-15'
   affiliation: state-affiliated
+  url: http://127.0.0.1:1200/telegram/channel/tass_agency
+  items_at_check: 17
+  status: ok
 - name: rt_russian
-  verified_urls:
-  - https://t.me/s/rt_russian
-  verified: '2026-10-15'
+  verified: null
   affiliation: state-affiliated
+  url: null
+  status: 'disabled: RSSHub says ''Unable to fetch message feed'' (no public t.me/s preview)'
 - name: meduzalive
-  verified_urls:
-  - https://t.me/s/meduzalive
   verified: '2026-10-15'
   affiliation: unknown
+  url: http://127.0.0.1:1200/telegram/channel/meduzalive
+  items_at_check: 19
+  status: ok
 - name: bbcrussian
-  verified_urls:
-  - https://t.me/s/bbcrussian
   verified: '2026-10-15'
   affiliation: unknown
+  url: http://127.0.0.1:1200/telegram/channel/bbcrussian
+  items_at_check: 18
+  status: ok
 - name: nexta_live
-  verified_urls:
-  - https://t.me/s/nexta_live
   verified: '2026-10-15'
   affiliation: unknown
+  url: http://127.0.0.1:1200/telegram/channel/nexta_live
+  items_at_check: 16
+  status: ok
 - name: rybar
-  verified_urls:
-  - https://t.me/s/rybar
   verified: '2026-10-15'
   affiliation: unknown
+  url: http://127.0.0.1:1200/telegram/channel/rybar
+  items_at_check: 17
+  status: ok
 - name: readovkanews
-  verified_urls:
-  - https://t.me/s/readovkanews
   verified: '2026-10-15'
   affiliation: unknown
+  url: http://127.0.0.1:1200/telegram/channel/readovkanews
+  items_at_check: 15
+  status: ok
 - name: kyivindependent_official
-  verified_urls:
-  - https://t.me/s/kyivindependent_official
   verified: '2026-10-15'
   affiliation: unknown
+  url: http://127.0.0.1:1200/telegram/channel/kyivindependent_official
+  items_at_check: 20
+  status: ok
 - name: insiderUA
-  verified_urls:
-  - https://t.me/s/insiderUA
-  verified: '2026-10-15'
+  verified: null
   affiliation: unknown
+  url: null
+  status: 'disabled: RSSHub says ''Unable to fetch message feed'' (no public t.me/s preview)'
 - name: Ateobreaking
-  verified_urls:
-  - https://t.me/s/Ateobreaking
   verified: '2026-10-15'
   affiliation: unknown
+  url: http://127.0.0.1:1200/telegram/channel/Ateobreaking
+  items_at_check: 20
+  status: ok
 - name: disclosetv
-  verified_urls:
-  - https://t.me/s/disclosetv
   verified: '2026-10-15'
   affiliation: unknown
+  url: http://127.0.0.1:1200/telegram/channel/disclosetv
+  items_at_check: 20
+  status: ok
 - name: CGTNOfficial
-  verified_urls:
-  - https://t.me/s/CGTNOfficial
-  verified: '2026-10-15'
+  verified: null
   affiliation: state-affiliated
+  url: null
+  status: 'disabled: RSSHub says ''Unable to fetch message feed'' (no public t.me/s preview)'
 - name: PDChina
-  verified_urls:
-  - https://t.me/s/PDChina
   verified: '2026-10-15'
   affiliation: state-affiliated
+  url: http://127.0.0.1:1200/telegram/channel/PDChina
+  items_at_check: 20
+  status: ok
+rsshub_local: http://127.0.0.1:1200/telegram/channel/{name}
+rsshub_tailscale: http://100.100.43.107:1200/telegram/channel/{name}
