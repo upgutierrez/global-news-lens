@@ -67,24 +67,33 @@ dashboard: event list, region heatmap, claim matrix, blind-spot report, links to
 | conflicting | Overlay flag: cluster contains contradicting claims, or item corrected/removed |
 \*US government-funded outlets are labeled state-affiliated too: the same rule applies to every origin.
 
-## Models (Ollama on Derek's PC, 12 GB)
-| Role | Model (tag) | Approx VRAM | Why |
-|---|---|---|---|
-| Analyst: zh/ja/ko + China/Japan/Asia | `qwen3.5:9b` (Q4/Q6) | ~7–8 GB | strongest CJK; **never sole judge on PRC-sensitive topics** |
-| Analyst: ru/es/pt/en/eu + Russia/Americas/Europe | `gemma4:12b` (QAT Q4_0) | ~8 GB | 140+ langs, Western origin |
-| Cross-origin judge | the *other* family from the analyst, + `ministral-3:14b` tiebreak | ~8 GB | reduces self-preference and origin bias |
-| Translation (optional) | gemma4 / MADLAD-400 3B on laptop | | |
-| Embeddings | `bge-m3` (laptop) | ~1.2 GB | |
-Model tags are placeholders; confirm exact names with `ollama list`.
+## Models (Ollama 0.34.2 on Derek's PC, RTX 3060 12GB): installed and measured 2026-10-15
+Models are stored in `D:\ollama\models`. Speeds are from one short multilingual prompt through `/api/generate` (generation t/s = eval_count / eval_duration), with `think=false`. All ran at 100% GPU (`ollama ps`).
+
+| Role | Tag (default quant) | Disk | VRAM loaded | Gen t/s @ ctx | Origin |
+|---|---|---|---|---|---|
+| Main analyst (ru/es/pt/en/eu; Russia, Americas, Europe) | `gemma4:12b` | 8.0 GB | ~11.0 GB used @ 8K | **47.7 @ 8K**, 49.8 @ 4K | Google (US) |
+| China/Japan/Asia analyst, CJK cross-check | `qwen3.5:9b` | 6.6 GB | 5.8 GB | **44.8 @ 8K** | Alibaba (CN) |
+| Stronger Chinese cross-check (optional) | `qwen3:14b` | 9.3 GB | 10 GB | **27.8 @ 4K**; 10.7 @ 8K (VRAM nearly full, slows down) | Alibaba (CN) |
+| EU judge / tiebreak | `ministral-3:14b` | 9.1 GB | 9.4 GB | **28.0 @ 8K** | Mistral (FR) |
+| Multilingual judge | `aya-expanse:8b` | 5.1 GB | 6.4 GB | **49.8 @ 8K** | Cohere (CA), CC-BY-NC |
+| Embeddings | `bge-m3` (567m) | 1.2 GB | 0.66 GB | 3 short texts in 21.8 s, cold load included | BAAI (CN) |
+
+Notes:
+- The first `gemma4:12b` load failed with `CUDA error: shared object initialization failed`. The retry worked, which looks like a one-time CUDA init problem. If it comes back, update the NVIDIA driver.
+- Run `qwen3:14b` at a 4K context, or use `qwen3.5:9b`. At 8K it nearly fills the 12 GB and drops to about 11 t/s.
+- No dedicated Japanese or Russian model was added. The Ollama library has none that both fits 12 GB and beats Gemma 4 / Qwen 3.5 on these languages. Gemma 4 handles ru/ja, and Qwen 3.5 handles ja/zh/ko.
+- Cold loads from D: take 45–125 s. Batch the work by model and keep `OLLAMA_KEEP_ALIVE` long.
+- bge-m3 is also on this PC, but the plan runs embeddings on the laptop (6 GB).
 
 ## Model-swap schedule (one big model resident at a time on 12 GB)
 | Time (PT, MST) | Resident model | Work |
 |---|---|---|
-| :00–:25 each hour | gemma4:12b | analyst pass for ru/es/pt/en/eu items + judge for Qwen-analyzed clusters |
-| :25–:50 | qwen3.5:9b | analyst pass for zh/ja/ko/asia items + judge for Gemma-analyzed clusters |
-| :50–:60 | ministral (tiebreak) | only clusters with model disagreement > 0.3 |
+| :00–:25 each hour | gemma4:12b (8K ctx) | analyst pass for ru/es/pt/en/eu items + judge for Qwen-analyzed clusters |
+| :25–:50 | qwen3.5:9b (8K ctx; qwen3:14b @4K for PRC-heavy clusters) | analyst pass for zh/ja/ko/asia items + judge for Gemma-analyzed clusters |
+| :50–:60 | ministral-3:14b or aya-expanse:8b (tiebreak) | only clusters with model disagreement > 0.3 |
 | 02:00–05:00 nightly | rotate | backfill, re-score last 72 h, blind-spot report at 06:00 |
-Batch by model to avoid reload cost (~5–15 s per swap); `OLLAMA_KEEP_ALIVE=30m`, `OLLAMA_NUM_PARALLEL=2`, context 8–16K.
+Batch by model to avoid reload cost (cold load measured at 45–125 s from D:); `OLLAMA_KEEP_ALIVE=30m`, `OLLAMA_NUM_PARALLEL=2`, context 8–16K.
 
 ## Scoring (per cluster *c*, region *r*, hourly snapshot)
 - **Coverage** C = 1 if region r has ≥1 non-duplicate item in c.
