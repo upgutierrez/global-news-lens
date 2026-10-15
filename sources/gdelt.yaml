@@ -1,0 +1,219 @@
+# GDELT DOC 2.0 API + GKG
+# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
+doc_api:
+  base: https://api.gdeltproject.org/api/v2/doc/doc
+  min_interval_s: 6
+  timespan: 1h
+  notes: mode=artlist for articles, mode=timelinetone / tonechart for tone per country; GDELT returns 429 if called faster than ~1 req/5s
+  queries:
+  - id: us
+    country: US
+    region: north_america
+    lang: en
+    query: sourcecountry:US
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: canada
+    country: Canada
+    region: north_america
+    lang: en
+    query: sourcecountry:CA
+    verified: '2026-10-15'
+    status: ok
+  - id: mexico
+    country: Mexico
+    region: north_america
+    lang: es
+    query: sourcecountry:MX sourcelang:spanish
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: russia
+    country: Russia
+    region: russia
+    lang: ru
+    query: sourcecountry:RS sourcelang:russian
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: china
+    country: China
+    region: china
+    lang: zh
+    query: sourcecountry:CH sourcelang:chinese
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: taiwan
+    country: Taiwan
+    region: china
+    lang: zh
+    query: sourcecountry:TW
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: japan
+    country: Japan
+    region: japan
+    lang: ja
+    query: sourcecountry:JA sourcelang:japanese
+    verified: '2026-10-15'
+    status: ok
+  - id: india
+    country: India
+    region: asia
+    lang: en
+    query: sourcecountry:IN
+    verified: '2026-10-15'
+    status: ok
+  - id: south_korea
+    country: South Korea
+    region: asia
+    lang: ko
+    query: sourcecountry:KS sourcelang:korean
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: indonesia
+    country: Indonesia
+    region: asia
+    lang: id
+    query: sourcecountry:ID
+    verified: '2026-10-15'
+    status: ok
+  - id: iran
+    country: Iran
+    region: middle_east
+    lang: fa
+    query: sourcecountry:IR
+    verified: '2026-10-15'
+    status: ok
+  - id: israel
+    country: Israel
+    region: middle_east
+    lang: he
+    query: sourcecountry:IS
+    verified: '2026-10-15'
+    status: ok
+  - id: saudi_arabia
+    country: Saudi Arabia
+    region: middle_east
+    lang: ar
+    query: sourcecountry:SA sourcelang:arabic
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: brazil
+    country: Brazil
+    region: south_america
+    lang: pt
+    query: sourcecountry:BR sourcelang:portuguese
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: argentina
+    country: Argentina
+    region: south_america
+    lang: es
+    query: sourcecountry:AR sourcelang:spanish
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: venezuela
+    country: Venezuela
+    region: south_america
+    lang: es
+    query: sourcecountry:VE
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: uk
+    country: UK
+    region: europe
+    lang: en
+    query: sourcecountry:UK
+    verified: '2026-10-15'
+    status: ok
+  - id: germany
+    country: Germany
+    region: europe
+    lang: de
+    query: sourcecountry:GM sourcelang:german
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: france
+    country: France
+    region: europe
+    lang: fr
+    query: sourcecountry:FR sourcelang:french
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+  - id: ukraine
+    country: Ukraine
+    region: europe
+    lang: uk
+    query: sourcecountry:UP
+    verified: null
+    status: unverified (HTTP 429 rate-limit at check time)
+gkg:
+  lastupdate_url: http://data.gdeltproject.org/gdeltv2/lastupdate.txt
+  verified: null
+  notes: 15-min CSV zips (export, mentions, gkg). Filter GKG V2Locations/V2Tone/Themes per country FIPS code; or use BigQuery gdelt-bq.gdeltv2.gkg_partitioned
+  example_filters:
+  - country_fips: US
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS
+  - country_fips: RS
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS
+  - country_fips: CH
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS
+  - country_fips: JA
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS
+  - country_fips: IN
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS
+  - country_fips: KS
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS
+  - country_fips: BR
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS
+  - country_fips: AR
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS
+  - country_fips: UK
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS
+  - country_fips: UP
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS
+  - country_fips: IR
+    themes:
+    - ARMEDCONFLICT
+    - ELECTION
+    - PROTEST
+    - SANCTIONS

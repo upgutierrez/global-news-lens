@@ -1,0 +1,135 @@
+# Government, foreign ministry, UN, USGS, central bank feeds
+# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
+regions:
+  north_america:
+  - id: us_state_dept
+    name: US State Dept
+    url: https://www.state.gov/rss-feed/press-releases/feed/
+    lang: en
+    affiliation: government
+    issuer: US
+    label: official statement
+    items_at_check: 10
+    verified: '2026-10-15'
+  - id: us_federal_reserve
+    name: US Federal Reserve
+    url: https://www.federalreserve.gov/feeds/press_all.xml
+    lang: en
+    affiliation: government
+    issuer: US
+    label: official statement
+    items_at_check: 20
+    verified: '2026-10-15'
+  - id: bank_of_canada
+    name: Bank of Canada
+    url: https://www.bankofcanada.ca/content_type/press-releases/feed/
+    lang: en
+    affiliation: government
+    issuer: CA
+    label: official statement
+    items_at_check: 10
+    verified: '2026-10-15'
+  russia:
+  - id: russia_mfa
+    name: Russia MFA
+    url: https://mid.ru/ru/rss.php
+    lang: ru
+    affiliation: government
+    issuer: RU
+    label: official statement
+    items_at_check: 10
+    verified: '2026-10-15'
+  europe:
+  - id: uk_fcdo_gov
+    name: UK FCDO/Gov
+    url: https://www.gov.uk/government/organisations/foreign-commonwealth-development-office.atom
+    lang: en
+    affiliation: government
+    issuer: GB
+    label: official statement
+    items_at_check: 20
+    verified: '2026-10-15'
+  - id: ecb_press
+    name: ECB press
+    url: https://www.ecb.europa.eu/rss/press.html
+    lang: en
+    affiliation: government
+    issuer: EU
+    label: official statement
+    items_at_check: 15
+    verified: '2026-10-15'
+  global:
+  - id: un_press
+    name: UN Press
+    url: https://press.un.org/en/rss.xml
+    lang: en
+    affiliation: government
+    issuer: UN
+    label: official statement
+    items_at_check: 10
+    verified: '2026-10-15'
+  - id: un_security_council
+    name: UN Security Council
+    url: https://news.un.org/feed/subscribe/en/news/topic/peace-and-security/feed/rss.xml
+    lang: en
+    affiliation: government
+    issuer: UN
+    label: official statement
+    items_at_check: 30
+    verified: '2026-10-15'
+  - id: who_news
+    name: WHO News
+    url: https://www.who.int/rss-feeds/news-english.xml
+    lang: en
+    affiliation: government
+    issuer: WHO
+    label: official statement
+    items_at_check: 25
+    verified: '2026-10-15'
+  - id: usgs_m4_5_day
+    name: USGS M4.5+ day
+    url: https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.atom
+    lang: en
+    affiliation: government
+    issuer: US
+    label: official statement
+    items_at_check: 6
+    verified: '2026-10-15'
+  - id: gdacs_alerts
+    name: GDACS alerts
+    url: https://www.gdacs.org/xml/rss.xml
+    lang: en
+    affiliation: government
+    issuer: UN/EU
+    label: official statement
+    items_at_check: 238
+    verified: '2026-10-15'
+  japan:
+  - id: bank_of_japan
+    name: Bank of Japan
+    url: https://www.boj.or.jp/en/rss/whatsnew.xml
+    lang: en
+    affiliation: government
+    issuer: JP
+    label: official statement
+    items_at_check: 54
+    verified: '2026-10-15'
+  south_america:
+  - id: brazil_planalto
+    name: Brazil Planalto
+    url: https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/noticias/RSS
+    lang: pt
+    affiliation: government
+    issuer: BR
+    label: official statement
+    items_at_check: 30
+    verified: '2026-10-15'
+  - id: argentina_casa_rosada
+    name: Argentina Casa Rosada
+    url: https://www.casarosada.gob.ar/informacion/actividad-oficial?format=feed&type=rss
+    lang: es
+    affiliation: government
+    issuer: AR
+    label: official statement
+    items_at_check: 40
+    verified: '2026-10-15'

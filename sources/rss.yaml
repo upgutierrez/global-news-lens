@@ -1,0 +1,474 @@
+# News outlet RSS feeds by region. affiliation: state-affiliated | public-broadcaster | independent | intergovernmental
+# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
+regions:
+  north_america:
+  - id: npr_news
+    name: NPR News
+    url: https://feeds.npr.org/1001/rss.xml
+    lang: en
+    affiliation: public-broadcaster
+    items_at_check: 10
+    verified: '2026-10-15'
+  - id: new_york_times_world
+    name: New York Times World
+    url: https://rss.nytimes.com/services/xml/rss/nyt/World.xml
+    lang: en
+    affiliation: independent
+    items_at_check: 58
+    verified: '2026-10-15'
+  - id: fox_news_world
+    name: Fox News World
+    url: https://moxie.foxnews.com/google-publisher/world.xml
+    lang: en
+    affiliation: independent
+    items_at_check: 25
+    verified: '2026-10-15'
+  - id: globe_and_mail_world
+    name: Globe and Mail World
+    url: https://www.theglobeandmail.com/arc/outboundfeeds/rss/category/world/
+    lang: en
+    affiliation: independent
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: la_jornada
+    name: La Jornada
+    url: https://www.jornada.com.mx/rss/edicion.xml
+    lang: es
+    affiliation: independent
+    items_at_check: 98
+    verified: '2026-10-15'
+  - id: el_universal_mx
+    name: El Universal MX
+    url: https://www.eluniversal.com.mx/arc/outboundfeeds/rss/?outputType=xml
+    lang: es
+    affiliation: independent
+    items_at_check: 100
+    verified: '2026-10-15'
+  russia:
+  - id: tass_english
+    name: TASS English
+    url: https://tass.com/rss/v2.xml
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: tass_russian
+    name: TASS Russian
+    url: https://tass.ru/rss/v2.xml
+    lang: ru
+    affiliation: state-affiliated
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: ria_novosti
+    name: RIA Novosti
+    url: https://ria.ru/export/rss2/archive/index.xml
+    lang: ru
+    affiliation: state-affiliated
+    items_at_check: 97
+    verified: '2026-10-15'
+  - id: rt_english
+    name: RT English
+    url: https://www.rt.com/rss/news/
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: interfax
+    name: Interfax
+    url: https://www.interfax.ru/rss.asp
+    lang: ru
+    affiliation: independent
+    items_at_check: 25
+    verified: '2026-10-15'
+  - id: kommersant
+    name: Kommersant
+    url: https://www.kommersant.ru/RSS/news.xml
+    lang: ru
+    affiliation: independent
+    items_at_check: 479
+    verified: '2026-10-15'
+  - id: meduza_en
+    name: Meduza EN
+    url: https://meduza.io/rss/en/all
+    lang: en
+    affiliation: independent
+    items_at_check: 30
+    verified: '2026-10-15'
+  - id: meduza_ru
+    name: Meduza RU
+    url: https://meduza.io/rss/all
+    lang: ru
+    affiliation: independent
+    items_at_check: 30
+    verified: '2026-10-15'
+  - id: novaya_gazeta_europe
+    name: Novaya Gazeta Europe
+    url: https://novayagazeta.eu/feed/rss
+    lang: ru
+    affiliation: independent
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: the_moscow_times
+    name: The Moscow Times
+    url: https://www.themoscowtimes.com/rss/news
+    lang: en
+    affiliation: independent
+    items_at_check: 50
+    verified: '2026-10-15'
+  china:
+  - id: global_times
+    name: Global Times
+    url: https://www.globaltimes.cn/rss/outbrain.xml
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 50
+    verified: '2026-10-15'
+  - id: cgtn_world
+    name: CGTN World
+    url: https://www.cgtn.com/subscribe/rss/section/world.xml
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 50
+    verified: '2026-10-15'
+  - id: scmp_china
+    name: SCMP China
+    url: https://www.scmp.com/rss/4/feed
+    lang: en
+    affiliation: independent
+    items_at_check: 50
+    verified: '2026-10-15'
+  - id: scmp_world
+    name: SCMP World
+    url: https://www.scmp.com/rss/91/feed
+    lang: en
+    affiliation: independent
+    items_at_check: 50
+    verified: '2026-10-15'
+  - id: rfa_mandarin
+    name: RFA Mandarin
+    url: https://www.rfa.org/mandarin/rss2.xml
+    lang: zh
+    affiliation: state-affiliated
+    items_at_check: 30
+    verified: '2026-10-15'
+  - id: bbc_chinese
+    name: BBC Chinese
+    url: https://feeds.bbci.co.uk/zhongwen/simp/rss.xml
+    lang: zh
+    affiliation: public-broadcaster
+    items_at_check: 38
+    verified: '2026-10-15'
+  - id: taipei_times
+    name: Taipei Times
+    url: https://www.taipeitimes.com/xml/index.rss
+    lang: en
+    affiliation: independent
+    items_at_check: 50
+    verified: '2026-10-15'
+  japan:
+  - id: nhk_world
+    name: NHK World
+    url: https://www3.nhk.or.jp/rss/news/cat0.xml
+    lang: ja
+    affiliation: public-broadcaster
+    items_at_check: 7
+    verified: '2026-10-15'
+  - id: japan_times
+    name: Japan Times
+    url: https://www.japantimes.co.jp/feed/
+    lang: en
+    affiliation: independent
+    items_at_check: 30
+    verified: '2026-10-15'
+  - id: asahi
+    name: Asahi
+    url: https://www.asahi.com/rss/asahi/newsheadlines.rdf
+    lang: ja
+    affiliation: independent
+    items_at_check: 40
+    verified: '2026-10-15'
+  asia:
+  - id: times_of_india_world
+    name: Times of India World
+    url: https://timesofindia.indiatimes.com/rssfeeds/296589292.cms
+    lang: en
+    affiliation: independent
+    items_at_check: 20
+    verified: '2026-10-15'
+  - id: the_hindu_international
+    name: The Hindu International
+    url: https://www.thehindu.com/news/international/feeder/default.rss
+    lang: en
+    affiliation: independent
+    items_at_check: 60
+    verified: '2026-10-15'
+  - id: ndtv_world
+    name: NDTV World
+    url: https://feeds.feedburner.com/ndtvnews-world-news
+    lang: en
+    affiliation: independent
+    items_at_check: 20
+    verified: '2026-10-15'
+  - id: dawn
+    name: Dawn
+    url: https://www.dawn.com/feeds/home
+    lang: en
+    affiliation: independent
+    items_at_check: 26
+    verified: '2026-10-15'
+  - id: yonhap_en
+    name: Yonhap EN
+    url: https://en.yna.co.kr/RSS/news.xml
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 101
+    verified: '2026-10-15'
+  - id: cna_singapore_asia
+    name: CNA Singapore Asia
+    url: https://www.channelnewsasia.com/api/v1/rss-outbound-feed?_format=xml&category=6511
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 20
+    verified: '2026-10-15'
+  - id: straits_times_asia
+    name: Straits Times Asia
+    url: https://www.straitstimes.com/news/asia/rss.xml
+    lang: en
+    affiliation: independent
+    items_at_check: 50
+    verified: '2026-10-15'
+  - id: rappler
+    name: Rappler
+    url: https://www.rappler.com/feed/
+    lang: en
+    affiliation: independent
+    items_at_check: 10
+    verified: '2026-10-15'
+  - id: vnexpress_intl
+    name: VnExpress Intl
+    url: https://e.vnexpress.net/rss/world.rss
+    lang: en
+    affiliation: independent
+    items_at_check: 60
+    verified: '2026-10-15'
+  - id: bangkok_post
+    name: Bangkok Post
+    url: https://www.bangkokpost.com/rss/data/topstories.xml
+    lang: en
+    affiliation: independent
+    items_at_check: 10
+    verified: '2026-10-15'
+  middle_east:
+  - id: al_jazeera
+    name: Al Jazeera
+    url: https://www.aljazeera.com/xml/rss/all.xml
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 25
+    verified: '2026-10-15'
+  - id: times_of_israel
+    name: Times of Israel
+    url: https://www.timesofisrael.com/feed/
+    lang: en
+    affiliation: independent
+    items_at_check: 15
+    verified: '2026-10-15'
+  - id: haaretz
+    name: Haaretz
+    url: https://www.haaretz.com/srv/haaretz-latest-headlines
+    lang: en
+    affiliation: independent
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: tehran_times
+    name: Tehran Times
+    url: https://www.tehrantimes.com/rss
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 30
+    verified: '2026-10-15'
+  - id: press_tv
+    name: Press TV
+    url: https://www.presstv.ir/rss.xml
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 112
+    verified: '2026-10-15'
+  - id: daily_sabah
+    name: Daily Sabah
+    url: https://www.dailysabah.com/rssFeed/world
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 49
+    verified: '2026-10-15'
+  south_america:
+  - id: folha_mundo
+    name: Folha Mundo
+    url: https://feeds.folha.uol.com.br/mundo/rss091.xml
+    lang: pt
+    affiliation: independent
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: g1_mundo
+    name: G1 Mundo
+    url: https://g1.globo.com/rss/g1/mundo/
+    lang: pt
+    affiliation: independent
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: ag_ncia_brasil
+    name: Agência Brasil
+    url: https://agenciabrasil.ebc.com.br/rss/internacional/feed.xml
+    lang: pt
+    affiliation: state-affiliated
+    items_at_check: 10
+    verified: '2026-10-15'
+  - id: clar_n_mundo
+    name: Clarín Mundo
+    url: https://www.clarin.com/rss/mundo/
+    lang: es
+    affiliation: independent
+    items_at_check: 10
+    verified: '2026-10-15'
+  - id: la_naci_n_ar
+    name: La Nación AR
+    url: https://www.lanacion.com.ar/arc/outboundfeeds/rss/?outputType=xml
+    lang: es
+    affiliation: independent
+    items_at_check: 93
+    verified: '2026-10-15'
+  - id: infobae_am_rica
+    name: Infobae América
+    url: https://www.infobae.com/arc/outboundfeeds/rss/
+    lang: es
+    affiliation: independent
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: el_tiempo_co
+    name: El Tiempo CO
+    url: https://www.eltiempo.com/rss/mundo.xml
+    lang: es
+    affiliation: independent
+    items_at_check: 10
+    verified: '2026-10-15'
+  - id: la_tercera_cl
+    name: La Tercera CL
+    url: https://www.latercera.com/arc/outboundfeeds/rss/?outputType=xml
+    lang: es
+    affiliation: independent
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: mercopress
+    name: MercoPress
+    url: https://en.mercopress.com/rss
+    lang: en
+    affiliation: independent
+    items_at_check: 10
+    verified: '2026-10-15'
+  europe:
+  - id: bbc_world
+    name: BBC World
+    url: https://feeds.bbci.co.uk/news/world/rss.xml
+    lang: en
+    affiliation: public-broadcaster
+    items_at_check: 29
+    verified: '2026-10-15'
+  - id: guardian_world
+    name: Guardian World
+    url: https://www.theguardian.com/world/rss
+    lang: en
+    affiliation: independent
+    items_at_check: 45
+    verified: '2026-10-15'
+  - id: dw_english
+    name: DW English
+    url: https://rss.dw.com/rdf/rss-en-world
+    lang: en
+    affiliation: public-broadcaster
+    items_at_check: 13
+    verified: '2026-10-15'
+  - id: france_24_en
+    name: France 24 EN
+    url: https://www.france24.com/en/rss
+    lang: en
+    affiliation: public-broadcaster
+    items_at_check: 24
+    verified: '2026-10-15'
+  - id: euronews
+    name: Euronews
+    url: https://www.euronews.com/rss
+    lang: en
+    affiliation: independent
+    items_at_check: 50
+    verified: '2026-10-15'
+  - id: le_monde_international
+    name: Le Monde International
+    url: https://www.lemonde.fr/international/rss_full.xml
+    lang: fr
+    affiliation: independent
+    items_at_check: 20
+    verified: '2026-10-15'
+  - id: der_spiegel_ausland
+    name: Der Spiegel Ausland
+    url: https://www.spiegel.de/ausland/index.rss
+    lang: de
+    affiliation: independent
+    items_at_check: 20
+    verified: '2026-10-15'
+  - id: el_pa_s_internacional
+    name: El País Internacional
+    url: https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/internacional/portada
+    lang: es
+    affiliation: independent
+    items_at_check: 23
+    verified: '2026-10-15'
+  - id: kyiv_independent
+    name: Kyiv Independent
+    url: https://kyivindependent.com/news-archive/rss/
+    lang: en
+    affiliation: independent
+    items_at_check: 15
+    verified: '2026-10-15'
+  - id: ukrainska_pravda_en
+    name: Ukrainska Pravda EN
+    url: https://www.pravda.com.ua/eng/rss/
+    lang: en
+    affiliation: independent
+    items_at_check: 20
+    verified: '2026-10-15'
+  global:
+  - id: reuters_via_google_news
+    name: Reuters (via Google News)
+    url: https://news.google.com/rss/search?q=site:reuters.com+world&hl=en-US&gl=US&ceid=US:en
+    lang: en
+    affiliation: independent
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: ap_top_news_via_google_news
+    name: AP Top News (via Google News)
+    url: https://news.google.com/rss/search?q=site:apnews.com&hl=en-US&gl=US&ceid=US:en
+    lang: en
+    affiliation: independent
+    items_at_check: 100
+    verified: '2026-10-15'
+  - id: afp_via_france24
+    name: AFP (via France24)
+    url: https://www.france24.com/en/rss
+    lang: en
+    affiliation: public-broadcaster
+    items_at_check: 24
+    verified: '2026-10-15'
+  - id: un_news
+    name: UN News
+    url: https://news.un.org/feed/subscribe/en/news/all/rss.xml
+    lang: en
+    affiliation: intergovernmental
+    items_at_check: 30
+    verified: '2026-10-15'
+  - id: voa_news
+    name: VOA News
+    url: https://www.voanews.com/api/zq$omekvi_
+    lang: en
+    affiliation: state-affiliated
+    items_at_check: 20
+    verified: '2026-10-15'

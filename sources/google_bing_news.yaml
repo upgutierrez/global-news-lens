@@ -1,0 +1,142 @@
+# Google News per country/language editions
+# Verified from the box by HTTP GET on 2026-10-15; only sources returning valid content are kept.
+google_news:
+  top_template: https://news.google.com/rss?hl={hl}&gl={gl}&ceid={ceid}
+  search_template: https://news.google.com/rss/search?q={query}&hl={hl}&gl={gl}&ceid={ceid}
+  notes: links are news.google.com redirects; resolve to canonical outlet URL in normalize
+  editions:
+  - edition: US
+    region: north_america
+    hl: en-US
+    gl: US
+    ceid: US:en
+    url: https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en
+    verified: '2026-10-15'
+  - edition: Canada
+    region: north_america
+    hl: en-CA
+    gl: CA
+    ceid: CA:en
+    url: https://news.google.com/rss?hl=en-CA&gl=CA&ceid=CA:en
+    verified: '2026-10-15'
+  - edition: Mexico
+    region: north_america
+    hl: es-419
+    gl: MX
+    ceid: MX:es-419
+    url: https://news.google.com/rss?hl=es-419&gl=MX&ceid=MX:es-419
+    verified: '2026-10-15'
+  - edition: Russia
+    region: russia
+    hl: ru
+    gl: RU
+    ceid: RU:ru
+    url: https://news.google.com/rss?hl=ru&gl=RU&ceid=RU:ru
+    verified: '2026-10-15'
+  - edition: China (Taiwan zh)
+    region: china
+    hl: zh-TW
+    gl: TW
+    ceid: TW:zh-Hant
+    url: https://news.google.com/rss?hl=zh-TW&gl=TW&ceid=TW:zh-Hant
+    verified: '2026-10-15'
+  - edition: Hong Kong
+    region: china
+    hl: zh-HK
+    gl: HK
+    ceid: HK:zh-Hant
+    url: https://news.google.com/rss?hl=zh-HK&gl=HK&ceid=HK:zh-Hant
+    verified: '2026-10-15'
+  - edition: Japan
+    region: japan
+    hl: ja
+    gl: JP
+    ceid: JP:ja
+    url: https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja
+    verified: '2026-10-15'
+  - edition: India
+    region: asia
+    hl: en-IN
+    gl: IN
+    ceid: IN:en
+    url: https://news.google.com/rss?hl=en-IN&gl=IN&ceid=IN:en
+    verified: '2026-10-15'
+  - edition: Korea
+    region: asia
+    hl: ko
+    gl: KR
+    ceid: KR:ko
+    url: https://news.google.com/rss?hl=ko&gl=KR&ceid=KR:ko
+    verified: '2026-10-15'
+  - edition: Indonesia
+    region: asia
+    hl: id
+    gl: ID
+    ceid: ID:id
+    url: https://news.google.com/rss?hl=id&gl=ID&ceid=ID:id
+    verified: '2026-10-15'
+  - edition: Israel
+    region: middle_east
+    hl: he
+    gl: IL
+    ceid: IL:he
+    url: https://news.google.com/rss?hl=he&gl=IL&ceid=IL:he
+    verified: '2026-10-15'
+  - edition: Saudi Arabia
+    region: middle_east
+    hl: ar
+    gl: SA
+    ceid: SA:ar
+    url: https://news.google.com/rss?hl=ar&gl=SA&ceid=SA:ar
+    verified: '2026-10-15'
+  - edition: Brazil
+    region: south_america
+    hl: pt-BR
+    gl: BR
+    ceid: BR:pt-419
+    url: https://news.google.com/rss?hl=pt-BR&gl=BR&ceid=BR:pt-419
+    verified: '2026-10-15'
+  - edition: Argentina
+    region: south_america
+    hl: es-419
+    gl: AR
+    ceid: AR:es-419
+    url: https://news.google.com/rss?hl=es-419&gl=AR&ceid=AR:es-419
+    verified: '2026-10-15'
+  - edition: Colombia
+    region: south_america
+    hl: es-419
+    gl: CO
+    ceid: CO:es-419
+    url: https://news.google.com/rss?hl=es-419&gl=CO&ceid=CO:es-419
+    verified: '2026-10-15'
+  - edition: UK
+    region: europe
+    hl: en-GB
+    gl: GB
+    ceid: GB:en
+    url: https://news.google.com/rss?hl=en-GB&gl=GB&ceid=GB:en
+    verified: '2026-10-15'
+  - edition: Germany
+    region: europe
+    hl: de
+    gl: DE
+    ceid: DE:de
+    url: https://news.google.com/rss?hl=de&gl=DE&ceid=DE:de
+    verified: '2026-10-15'
+  - edition: France
+    region: europe
+    hl: fr
+    gl: FR
+    ceid: FR:fr
+    url: https://news.google.com/rss?hl=fr&gl=FR&ceid=FR:fr
+    verified: '2026-10-15'
+  - edition: Ukraine
+    region: europe
+    hl: uk
+    gl: UA
+    ceid: UA:uk
+    url: https://news.google.com/rss?hl=uk&gl=UA&ceid=UA:uk
+    verified: '2026-10-15'
+bing_news:
+  status: 'dropped: format=rss returned no entries from the box on 2026-10-15; Bing News Search API is paid/retired, so it is not used'
