@@ -19,7 +19,39 @@ A personal, non-commercial tool that compares how news outlets and online commun
 
 ## Status
 
-Early development. Collector spec and pipeline design are in progress.
+Early development. Source lists verified 2026-10-15 (see `docs/source-verification.md`). RSS collector works; GDELT collector written but GDELT was rate-limiting (HTTP 429) during testing. Reddit collector pending API approval.
+
+## Repository structure
+
+```
+sources/                 # verified source lists (one YAML per source type)
+  rss.yaml               # outlets by region, with affiliation (state-affiliated / public-broadcaster / independent) + language
+  official.yaml          # governments, foreign ministries, UN, USGS, GDACS, central banks
+  gdelt.yaml             # GDELT DOC 2.0 queries per country/language + GKG file feed
+  google_bing_news.yaml  # Google News per-country editions (Bing dropped)
+  bluesky.yaml           # public AppView author feeds of outlets/journalists
+  mastodon.yaml          # instance hashtag + account RSS
+  telegram.yaml          # public channels (self-hosted RSSHub / t.me/s previews)
+  community.yaml         # Hacker News (Algolia), Lemmy
+  youtube.yaml           # news channel RSS by channel id
+  wikipedia.yaml         # current events portal, recent changes, EventStreams
+  archive.yaml           # Wayback availability API for edit tracking
+collectors/              # Python collectors (rss.py, gdelt.py, common.py)
+docs/
+  architecture.md        # pipeline, item schema, labels, scoring, model-swap schedule
+  reddit-collector.md    # Reddit spec (PENDING API approval)
+  source-verification.md # what was verified/dropped and why
+requirements.txt
+```
+
+## Quick start
+
+```bash
+pip install -r requirements.txt
+python -m collectors.rss              # news RSS -> data/raw/<date>/rss.jsonl
+python -m collectors.rss --official   # official feeds
+python -m collectors.gdelt            # GDELT (slow: >=6 s between calls)
+```
 
 ## Planned stack
 
