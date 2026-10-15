@@ -61,6 +61,32 @@ docker compose up -d        # SearXNG + RSSHub, restart: unless-stopped
 
 Ports are bound to 127.0.0.1 and the Tailscale IP only, never 0.0.0.0. If the Tailscale IP changes, update `.env` and run `docker compose up -d` again.
 
+## Background operation on Derek's PC
+
+Everything runs hidden, at Below Normal priority, under Derek's user account (no admin). Tasks are in Task Scheduler under `\GlobalNewsLens\`. Install them with `powershell -ExecutionPolicy Bypass -File scripts\windows\install_tasks.ps1`.
+
+| Task | Schedule | What it does |
+|---|---|---|
+| GNL-Ollama-Start | at logon | `start_ollama.ps1`: sets KEEP_ALIVE=5m, MAX_LOADED_MODELS=1, NUM_PARALLEL=1, then runs `D:\Ollama\Start-Ollama-Tailscale.ps1` hidden |
+| GNL-Collectors | every 20 min | RSS, official, and GDELT collectors (CPU/network only) |
+| GNL-LLMWorker | at logon + re-launched every 10 min if not running | continuous LLM loop; pauses when another app uses the GPU |
+
+**GPU guard** (`scripts/windows/gpu_guard.ps1`, settings in `config.json`):
+- Reads Windows per-process GPU counters, ignoring Ollama and system processes.
+- The GPU counts as busy if any other process is at ≥10% GPU engine utilization or holds ≥1500 MB of dedicated VRAM, or if a listed game or editor process is running.
+- When the GPU is busy, the worker unloads all models (`keep_alive: 0`) and waits. It resumes on its own after the GPU has been free for 150 s.
+- The LLM stage also checks the guard between items.
+
+**Pause:**
+- Create `D:\global-news-lens\PAUSE` to stop everything (collectors and LLM).
+- Create `D:\global-news-lens\PAUSE_LLM` to stop only the GPU work.
+- Delete the file to resume.
+- To switch it off fully: `Disable-ScheduledTask -TaskPath '\GlobalNewsLens\' -TaskName GNL-LLMWorker` (or `GNL-Collectors`).
+
+**Logs:** `D:\global-news-lens\logs\*.log`, rotated at 5 MB, 5 files kept. No notifications.
+
+**Resources:** `%USERPROFILE%\.wslconfig` caps Docker/WSL at 4 GB RAM and 4 CPUs. Docker Desktop starts at login without opening its dashboard.
+
 ## Quick start
 
 ```bash
